@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-
     <!-- Bannière Adblock -->
     <div id="adblock-banner">
         <p>Pour une meilleure expérience sans publicités, utilisez un navigateur avec bloqueur de publicités comme 
@@ -24,28 +23,6 @@
             <button class="logout-btn" onclick="logout()">Déconnexion</button>
         </header>
 
-        <!-- Zone Admin visible seulement pour les admins -->
-        <div id="admin-section" class="admin-section" style="display: none;">
-            <h2>Section Administrateur</h2>
-            <button class="admin-btn" onclick="addMovie()">Ajouter un film</button>
-            <button class="admin-btn" onclick="removeMovie()">Supprimer un film</button>
-        </div>
-
-        <!-- Modale pour ajouter un film -->
-        <div id="addMovieModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <h2>Ajouter un Film</h2>
-                <form id="addMovieForm">
-                    <label for="movieName">Nom du Film:</label>
-                    <input type="text" id="movieName" name="movieName" required><br><br>
-                    <label for="movieUrl">URL du Film:</label>
-                    <input type="url" id="movieUrl" name="movieUrl" required><br><br>
-                    <button type="submit">Ajouter</button>
-                </form>
-            </div>
-        </div>
-
         <!-- Contenu Principal -->
         <main class="main-content">
             <!-- Catégorie Fast & Furious -->
@@ -56,7 +33,26 @@
                         <h3>Fast & Furious 1</h3>
                         <iframe src="https://filemoon.sx/e/dluwszk086er" scrolling="no" allowfullscreen></iframe>
                     </div>
-                    <!-- Ajouter d'autres films ici... -->
+                    <div class="card">
+                        <h3>Fast & Furious 2</h3>
+                        <iframe src="https://filemoon.sx/e/pdxjuwy2wwd1" scrolling="no" allowfullscreen></iframe>
+                    </div>
+                    <div class="card">
+                        <h3>Fast & Furious 4</h3>
+                        <iframe src="https://filemoon.sx/e/5wja6y3ff2u6" scrolling="no" allowfullscreen></iframe>
+                    </div>
+                    <div class="card">
+                        <h3>Fast & Furious 5</h3>
+                        <iframe src="https://filemoon.sx/e/ckd4zeqxc0ks" scrolling="no" allowfullscreen></iframe>
+                    </div>
+                    <div class="card">
+                        <h3>Fast & Furious 6</h3>
+                        <iframe src="https://filemoon.sx/e/j1ng3m4km0ec" scrolling="no" allowfullscreen></iframe>
+                    </div>
+                    <div class="card">
+                        <h3>Fast & Furious 10</h3>
+                        <iframe src="https://filemoon.sx/e/qsmsrk2k0zml" scrolling="no" allowfullscreen></iframe>
+                    </div>
                 </div>
             </section>
 
@@ -68,7 +64,14 @@
                         <h3>Deadpool 1</h3>
                         <iframe src="https://filemoon.sx/e/niqfq9ldwoxt" scrolling="no" allowfullscreen></iframe>
                     </div>
-                    <!-- Ajouter d'autres films ici... -->
+                    <div class="card">
+                        <h3>Deadpool 2</h3>
+                        <iframe src="https://filemoon.sx/e/k35iogdyle2h" scrolling="no" allowfullscreen></iframe>
+                    </div>
+                    <div class="card">
+                        <h3>Deadpool & Wolverine</h3>
+                        <iframe src="https://filemoon.sx/e/te74gxx6qgci" scrolling="no" allowfullscreen></iframe>
+                    </div>
                 </div>
             </section>
 
@@ -102,51 +105,6 @@
         function logout() {
             window.location.href = 'index.html';
         }
-
-        // Fonction pour vérifier si l'utilisateur est admin
-        function checkAdmin() {
-            // Simulation d'un contrôle d'accès (ici on suppose que l'utilisateur est admin)
-            const isAdmin = true; // Remplacer par un vrai contrôle (ex: vérification d'un cookie, token, ou API)
-
-            if (isAdmin) {
-                document.getElementById('admin-section').style.display = 'block'; // Afficher la section admin
-            }
-        }
-
-        // Fonction pour afficher la modale d'ajout de film
-        function addMovie() {
-            const modal = document.getElementById("addMovieModal");
-            modal.style.display = "block"; // Afficher la modale
-        }
-
-        // Fonction pour fermer la modale
-        function closeModal() {
-            const modal = document.getElementById("addMovieModal");
-            modal.style.display = "none"; // Fermer la modale
-        }
-
-        // Gérer l'ajout d'un film
-        document.getElementById('addMovieForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // Empêcher l'envoi du formulaire
-
-            const movieName = document.getElementById('movieName').value;
-            const movieUrl = document.getElementById('movieUrl').value;
-
-            // Ajouter un film (logique à personnaliser)
-            const category = document.getElementById('fast-furious-movies'); // Exemple de catégorie, changer si nécessaire
-            const newCard = document.createElement('div');
-            newCard.classList.add('card');
-            newCard.innerHTML = `<h3>${movieName}</h3><iframe src="${movieUrl}" scrolling="no" allowfullscreen></iframe>`;
-
-            category.appendChild(newCard);
-
-            // Fermer la modale
-            closeModal();
-        });
-
-        // Appeler la fonction de vérification à l'ouverture de la page
-        checkAdmin();
     </script>
-
 </body>
 </html>
