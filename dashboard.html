@@ -1,55 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="dashboard.css">
+    <title>Dashboard - Films</title>
+    <link rel="stylesheet" href="Dashboard.css">
 </head>
 <body>
+
     <div class="dashboard-container">
+        <!-- Entête -->
         <header class="header">
-            <h1>Bonjour, <span id="username">Utilisateur</span> 👋</h1>
-            <button class="logout-btn" onclick="window.location.href='index.html'">Déconnexion</button>
+            <h1>Bienvenue sur le tableau de bord des films</h1>
+            <button class="logout-btn" onclick="logout()">Déconnexion</button>
         </header>
+
+        <!-- Contenu Principal -->
         <main class="main-content">
-            <div class="card">
-                <h2>Deadpool & Wolverine</h2>
-                <iframe 
-                    src="https://filemoon.sx/e/te74gxx6qgci" 
-                    width="100%" 
-                    height="370px" 
-                    scrolling="no" 
-                    allowfullscreen="true" 
-                    webkitallowfullscreen="true" 
-                    mozallowfullscreen="true">
-                </iframe>
-            </div>
-            <div class="card">
-                <h2>Ready Player One</h2>
-                <iframe 
-                    src="https://filemoon.sx/e/lri81845b99q" 
-                    width="100%" 
-                    height="370px" 
-                    scrolling="no" 
-                    allowfullscreen="true" 
-                    webkitallowfullscreen="true" 
-                    mozallowfullscreen="true">
-                </iframe>
-            </div>
-            <div class="card">
-                <h2>Fast & Furious: Hobbs & Shaw</h2>
-                <iframe 
-                    src="https://filemoon.sx/e/ye3u08n1p1qm" 
-                    width="100%" 
-                    height="370px" 
-                    scrolling="no" 
-                    allowfullscreen="true" 
-                    webkitallowfullscreen="true" 
-                    mozallowfullscreen="true">
-                </iframe>
-            </div>
+            <!-- Catégorie Fast & Furious -->
+            <section class="category" id="fast-furious">
+                <h2>Fast & Furious <button class="toggle-btn" onclick="toggleCategory('fast-furious')">Afficher / Masquer</button></h2>
+                <div class="movies" id="fast-furious-movies">
+                    <div class="card">
+                        <h3>Fast & Furious 1</h3>
+                        <iframe src="https://filemoon.sx/e/dluwszk086er" width="100%" height="200" scrolling="NO" allowfullscreen></iframe>
+                    </div>
+                    <div class="card">
+                        <h3>Fast & Furious 2</h3>
+                        <iframe src="https://filemoon.sx/e/pdxjuwy2wwd1" width="100%" height="200" scrolling="NO" allowfullscreen></iframe>
+                    </div>
+                    <div class="card">
+                        <h3>Fast & Furious 4</h3>
+                        <iframe src="https://filemoon.sx/e/5wja6y3ff2u6" width="100%" height="200" scrolling="NO" allowfullscreen></iframe>
+                    </div>
+                    <div class="card">
+                        <h3>Fast & Furious 5</h3>
+                        <iframe src="https://filemoon.sx/e/ckd4zeqxc0ks" width="100%" height="200" scrolling="NO" allowfullscreen></iframe>
+                    </div>
+                    <div class="card">
+                        <h3>Fast & Furious 6</h3>
+                        <iframe src="https://filemoon.sx/e/j1ng3m4km0ec" width="100%" height="200" scrolling="NO" allowfullscreen></iframe>
+                    </div>
+                    <div class="card">
+                        <h3>Fast & Furious 10</h3>
+                        <iframe src="https://filemoon.sx/e/qsmsrk2k0zml" width="100%" height="200" scrolling="NO" allowfullscreen></iframe>
+                    </div>
+                    <div class="card">
+                        <h3>Fast & Furious </h3>
+                        <iframe src="https://filemoon.sx/e/ye3u08n1p1qm" width="100%" height="200" scrolling="NO" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Catégorie Deadpool -->
+            <section class="category" id="deadpool">
+                <h2>Deadpool <button class="toggle-btn" onclick="toggleCategory('deadpool')">Afficher / Masquer</button></h2>
+                <div class="movies" id="deadpool-movies">
+                    <div class="card">
+                        <h3>Deadpool 1</h3>
+                        <iframe src="https://filemoon.sx/e/niqfq9ldwoxt" width="100%" height="200" scrolling="NO" allowfullscreen></iframe>
+                    </div>
+                    <div class="card">
+                        <h3>Deadpool 2</h3>
+                        <iframe src="https://filemoon.sx/e/k35iogdyle2h" width="100%" height="200" scrolling="NO" allowfullscreen></iframe>
+                    </div>
+                    <div class="card">
+                        <h3> Deadpool & Wolverine</h3>
+                        <iframe src="https://filemoon.sx/e/te74gxx6qgci" width="100%" height="200" scrolling="NO" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Catégorie Ready Player One -->
+            <section class="category" id="ready-player-one">
+                <h2>Ready Player One <button class="toggle-btn" onclick="toggleCategory('ready-player-one')">Afficher / Masquer</button></h2>
+                <div class="movies" id="ready-player-one-movies">
+                    <div class="card">
+                        <h3>Ready Player One</h3>
+                        <iframe src="https://filemoon.sx/e/lri81845b99q" width="100%" height="200" scrolling="NO" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
         </main>
     </div>
+
+    <script>
+        // Fonction pour masquer ou afficher une catégorie
+        function toggleCategory(categoryId) {
+            var category = document.getElementById(categoryId + '-movies');
+            if (category.style.display === 'none') {
+                category.style.display = 'block';
+            } else {
+                category.style.display = 'none';
+            }
+        }
+
+        // Fonction de déconnexion
+        function logout() {
+            // Simuler une déconnexion en redirigeant l'utilisateur
+            window.location.href = 'index.html';
+        }
+    </script>
+
 </body>
 </html>
