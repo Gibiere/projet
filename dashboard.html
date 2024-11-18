@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-    <!-- Bannière de recommandation -->
-    <div id="adblock-notice" style="background: #f44336; color: white; padding: 10px; text-align: center;">
+    <!-- Bannière Adblock -->
+    <div id="adblock-banner">
         <p>Pour une meilleure expérience sans publicités, utilisez un navigateur avec bloqueur de publicités comme 
-            <a href="https://brave.com" target="_blank" style="color: #ffcc00;">Brave</a> 
-            ou installez 
-            <a href="https://ublockorigin.com/" target="_blank" style="color: #ffcc00;">uBlock Origin</a>.
+            <a href="https://brave.com" target="_blank">Brave</a> ou installez 
+            <a href="https://ublockorigin.com/" target="_blank">uBlock Origin</a>.
         </p>
+        <button onclick="closeBanner()">X</button>
     </div>
 
     <div class="dashboard-container">
@@ -41,22 +41,6 @@
                         <h3>Fast & Furious 4</h3>
                         <iframe src="https://filemoon.sx/e/5wja6y3ff2u6" width="100%" height="200" scrolling="no" allowfullscreen></iframe>
                     </div>
-                    <div class="card">
-                        <h3>Fast & Furious 5</h3>
-                        <iframe src="https://filemoon.sx/e/ckd4zeqxc0ks" width="100%" height="200" scrolling="no" allowfullscreen></iframe>
-                    </div>
-                    <div class="card">
-                        <h3>Fast & Furious 6</h3>
-                        <iframe src="https://filemoon.sx/e/j1ng3m4km0ec" width="100%" height="200" scrolling="no" allowfullscreen></iframe>
-                    </div>
-                    <div class="card">
-                        <h3>Fast & Furious 10</h3>
-                        <iframe src="https://filemoon.sx/e/qsmsrk2k0zml" width="100%" height="200" scrolling="no" allowfullscreen></iframe>
-                    </div>
-                    <div class="card">
-                        <h3>Fast & Furious</h3>
-                        <iframe src="https://filemoon.sx/e/ye3u08n1p1qm" width="100%" height="200" scrolling="no" allowfullscreen></iframe>
-                    </div>
                 </div>
             </section>
 
@@ -68,25 +52,6 @@
                         <h3>Deadpool 1</h3>
                         <iframe src="https://filemoon.sx/e/niqfq9ldwoxt" width="100%" height="200" scrolling="no" allowfullscreen></iframe>
                     </div>
-                    <div class="card">
-                        <h3>Deadpool 2</h3>
-                        <iframe src="https://filemoon.sx/e/k35iogdyle2h" width="100%" height="200" scrolling="no" allowfullscreen></iframe>
-                    </div>
-                    <div class="card">
-                        <h3>Deadpool & Wolverine</h3>
-                        <iframe src="https://filemoon.sx/e/te74gxx6qgci" width="100%" height="200" scrolling="no" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Catégorie Ready Player One -->
-            <section class="category" id="ready-player-one">
-                <h2>Ready Player One <button class="toggle-btn" onclick="toggleCategory('ready-player-one')">Afficher / Masquer</button></h2>
-                <div class="movies" id="ready-player-one-movies">
-                    <div class="card">
-                        <h3>Ready Player One</h3>
-                        <iframe src="https://filemoon.sx/e/lri81845b99q" width="100%" height="200" scrolling="no" allowfullscreen></iframe>
-                    </div>
                 </div>
             </section>
         </main>
@@ -95,17 +60,18 @@
     <script>
         // Fonction pour masquer ou afficher une catégorie
         function toggleCategory(categoryId) {
-            var category = document.getElementById(categoryId + '-movies');
-            if (category.style.display === 'none') {
-                category.style.display = 'block';
-            } else {
-                category.style.display = 'none';
-            }
+            const category = document.getElementById(categoryId + '-movies');
+            category.style.display = category.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Fonction pour fermer la bannière
+        function closeBanner() {
+            const banner = document.getElementById('adblock-banner');
+            banner.style.display = 'none';
         }
 
         // Fonction de déconnexion
         function logout() {
-            // Simuler une déconnexion en redirigeant l'utilisateur
             window.location.href = 'index.html';
         }
     </script>
