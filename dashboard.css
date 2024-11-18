@@ -2,6 +2,7 @@ body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     background: linear-gradient(10deg, #611010, #011102); 
+    background-size: cover;  /* Assure que le fond couvre tout l'écran */
     color: #fff; /* Texte plus clair pour plus de lisibilité */
     display: flex;
     justify-content: center;
