@@ -117,6 +117,30 @@ body {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Conteneur de la barre de recherche */
+.search-container {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+}
+
+#search-bar {
+    width: 80%;
+    max-width: 600px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #e57373;
+    border-radius: 5px;
+    outline: none;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+#search-bar:focus {
+    border-color: #d32f2f;
+    box-shadow: 0 0 5px rgba(211, 47, 47, 0.5);
+}
+
+
 /* Responsive */
 @media (max-width: 768px) {
     .header h1 {
