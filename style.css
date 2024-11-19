@@ -1,120 +1,102 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(10deg, #611010, #011102);
-    color: #fff;
+    background: linear-gradient(10deg, #611010, #011102); /* Dégradé personnalisé */
+    color: #fff; /* Texte en blanc pour plus de lisibilité */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-header {
-    background-color: #4CAF50;
-    width: 100%;
+.header {
+    background: rgba(0, 0, 0, 0.7); /* Fond sombre pour l'entête */
     padding: 20px;
     text-align: center;
-    color: white;
 }
 
-header h1 {
+.header h1 {
     margin: 0;
+    font-size: 2.5em;
 }
 
 .logout-btn {
+    padding: 10px 20px;
     background-color: #e57373;
     border: none;
-    color: white;
-    padding: 12px 20px;
-    cursor: pointer;
     border-radius: 5px;
+    color: white;
     font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .logout-btn:hover {
     background-color: #d32f2f;
+    transform: scale(1.1);
 }
 
 .navbar {
+    text-align: center;
     margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
 }
 
 .navbar a {
+    color: white;
+    padding: 10px 20px;
     text-decoration: none;
-    color: #333;
-    font-size: 18px;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
 }
 
-.search-section {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    position: relative;
-}
-
-#search-bar {
-    padding: 10px;
-    font-size: 16px;
-    width: 250px;
+.navbar a:hover {
+    background-color: #4caf50;
     border-radius: 5px;
-    border: 1px solid #ddd;
-}
-
-#suggestions-list {
-    margin-top: 10px;
-    padding: 0;
-    list-style-type: none;
-    width: 250px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: white;
-    position: absolute;
-    top: 40px;  /* Make sure the suggestions appear just below the search bar */
-    z-index: 10;
-}
-
-#suggestions-list li {
-    padding: 8px;
-    cursor: pointer;
-}
-
-#suggestions-list li:hover {
-    background-color: #f1f1f1;
 }
 
 .movies {
-    margin-top: 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    padding: 20px;
 }
 
 .card {
+    background: linear-gradient(to bottom, #fff, #f1f1f1);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
     width: 300px;
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.card iframe {
-    border: none;
-}
-
-.card h3 {
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    margin: 0;
-    font-size: 18px;
-    border-bottom: 1px solid #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.card iframe {
+    width: 100%;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .navbar a {
+        font-size: 1em;
+        padding: 8px 16px;
+    }
+
+    .card {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .movies {
+        flex-direction: column;
+        align-items: center;
+    }
 }
