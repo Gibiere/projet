@@ -19,6 +19,15 @@
             <a href="ready_player_one.html">Ready Player One</a>
         </nav>
 
+        <div class="search-container">
+            <input
+                type="text"
+                id="search-bar"
+                placeholder="Rechercher un film..."
+                oninput="filterMovies()"
+            />
+        </div>
+
         <section class="movies">
             <div class="card">
                 <h3>Fast & Furious 1</h3>
@@ -55,6 +64,15 @@
         function logout() {
             window.location.href = 'index.html';
         }
+
+        function filterMovies() {
+            const query = document.getElementById('search-bar').value.toLowerCase();
+            const movies = document.querySelectorAll('.card');
+            movies.forEach((movie) => {
+                const title = movie.querySelector('h3').innerText.toLowerCase();
+                movie.style.display = title.includes(query) ? 'block' : 'none';
+            });
+        }
     </script>
 </body>
-</html>
+    </html>
