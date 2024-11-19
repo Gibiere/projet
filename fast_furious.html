@@ -7,44 +7,58 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- En-tête avec le titre et bouton de déconnexion -->
     <header class="header">
         <h1>Films Fast & Furious</h1>
         <button class="logout-btn" onclick="logout()">Déconnexion</button>
     </header>
 
-    <main class="main-content">
-        <nav class="navbar">
-            <a href="dashboard.html">Dashboard</a>
-            <a href="deadpool.html">Deadpool</a>
-            <a href="ready_player_one.html">Ready Player One</a>
-        </nav>
+    <!-- Barre de navigation -->
+    <nav class="navbar">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="deadpool.html">Deadpool</a>
+        <a href="ready_player_one.html">Ready Player One</a>
+    </nav>
 
-        <section class="movies">
-            <!-- Films Fast & Furious -->
+    <!-- Barre de recherche pour les films -->
+    <section class="search-bar">
+        <input type="text" id="search" placeholder="Rechercher un film..." onkeyup="searchMovies()">
+    </section>
+
+    <!-- Contenu principal des films -->
+    <main class="main-content">
+        <section class="movies" id="movie-list">
+            <!-- Film 1 -->
             <div class="card">
                 <h3>Fast & Furious 1</h3>
                 <iframe src="https://filemoon.sx/e/dluwszk086er" width="100%" height="200" scrolling="NO" allowfullscreen></iframe>
             </div>
+            <!-- Film 2 -->
             <div class="card">
                 <h3>Fast & Furious 2</h3>
                 <iframe src="https://filemoon.sx/e/pdxjuwy2wwd1" width="100%" height="200" scrolling="NO" allowfullscreen></iframe>
             </div>
+            <!-- Film 3 -->
             <div class="card">
                 <h3>Fast & Furious 4</h3>
                 <iframe src="https://filemoon.sx/e/5wja6y3ff2u6" width="100%" height="200" scrolling="NO" allowfullscreen></iframe>
             </div>
+            <!-- Film 4 -->
             <div class="card">
                 <h3>Fast & Furious 5</h3>
                 <iframe src="https://filemoon.sx/e/ckd4zeqxc0ks" width="100%" height="200" scrolling="NO" allowfullscreen></iframe>
             </div>
+            <!-- Film 5 -->
             <div class="card">
                 <h3>Fast & Furious 6</h3>
                 <iframe src="https://filemoon.sx/e/j1ng3m4km0ec" width="100%" height="200" scrolling="NO" allowfullscreen></iframe>
             </div>
+            <!-- Film 6 -->
             <div class="card">
                 <h3>Fast & Furious 10</h3>
                 <iframe src="https://filemoon.sx/e/qsmsrk2k0zml" width="100%" height="200" scrolling="NO" allowfullscreen></iframe>
             </div>
+            <!-- Film 7 -->
             <div class="card">
                 <h3>Fast & Furious (Hobbs & Shaw)</h3>
                 <iframe src="https://filemoon.sx/e/ye3u08n1p1qm" width="100%" height="200" scrolling="NO" allowfullscreen></iframe>
@@ -53,8 +67,23 @@
     </main>
 
     <script>
+        // Fonction pour la déconnexion
         function logout() {
             window.location.href = 'index.html';
+        }
+
+        // Fonction de recherche de films
+        function searchMovies() {
+            const searchInput = document.getElementById('search').value.toLowerCase();
+            const movieCards = document.querySelectorAll('.card');
+            movieCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                if (title.includes(searchInput)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
         }
     </script>
 </body>
