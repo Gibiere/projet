@@ -7,18 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- En-tête avec le titre et bouton de déconnexion -->
     <header class="header">
         <h1>Films Fast & Furious</h1>
-        <button class="logout-btn" onclick="logout()">Déconnexion</button>
-    </header>
-
-    <!-- Barre de navigation -->
-    <nav class="navbar">
-        <a href="zombieland.html">Zombieland</a>
-        <a href="deadpool.html">Deadpool</a>
-        <a href="ready_player_one.html">Ready Player One</a>
-    </nav>
+        
 
     <!-- Contenu principal des films -->
     <main class="main-content">
@@ -61,25 +52,5 @@
         </section>
     </main>
 
-    <script>
-        // Fonction pour la déconnexion
-        function logout() {
-            window.location.href = 'index.html';
-        }
-
-        // Fonction de recherche de films
-        function searchMovies() {
-            const searchInput = document.getElementById('search').value.toLowerCase();
-            const movieCards = document.querySelectorAll('.card');
-            movieCards.forEach(card => {
-                const title = card.querySelector('h3').textContent.toLowerCase();
-                if (title.includes(searchInput)) {
-                    card.style.display = '';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-    </script>
 </body>
 </html>
