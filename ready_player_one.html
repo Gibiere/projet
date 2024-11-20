@@ -10,20 +10,9 @@
     <!-- En-tête avec le titre et bouton de déconnexion -->
     <header class="header">
         <h1>Films Ready Player One</h1>
-        <button class="logout-btn" onclick="logout()">Déconnexion</button>
+
     </header>
 
-    <!-- Barre de navigation -->
-    <nav class="navbar">
-        <a href="zombieland.html">Zombieland</a>
-        <a href="fast_furious.html">Fast & Furious</a>
-        <a href="deadpool.html">Deadpool</a>
-    </nav>
-
-    <!-- Barre de recherche -->
-    <section class="search-bar">
-        <input type="text" id="search" placeholder="Rechercher un film..." onkeyup="searchMovies()">
-    </section>
 
     <!-- Contenu principal -->
     <main class="main-content">
@@ -36,25 +25,5 @@
         </section>
     </main>
 
-    <script>
-        // Fonction pour la déconnexion
-        function logout() {
-            window.location.href = 'index.html';
-        }
-
-        // Fonction de recherche de films
-        function searchMovies() {
-            const searchInput = document.getElementById('search').value.toLowerCase();
-            const movieCards = document.querySelectorAll('.card');
-            movieCards.forEach(card => {
-                const title = card.querySelector('h3').textContent.toLowerCase();
-                if (title.includes(searchInput)) {
-                    card.style.display = '';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-    </script>
 </body>
 </html>
