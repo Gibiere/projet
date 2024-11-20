@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moi, moche et méchant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Moi, moche et méchant</h1>
+    </header> <!-- Correction de la balise de fermeture -->
+
+    <main class="main-content">
+        <nav class="navbar">
+            <a href="zombieland.html">Zombieland</a>
+            <a href="fast_furious.html">Fast & Furious</a>
+            <a href="ready_player_one.html">Ready Player One</a>
+            <a href="zombieland.html">Zombieland</a>
+        </nav>
+
+        <section class="movies">
+            <div class="card">
+                <h3>Moi, moche et méchant 1<h3>
+                <iframe src="https://filemoon.sx/e/trvff7xmj1ut" width="100%" height="200" scrolling="NO" allowfullscreen></iframe>
+            </div>
+            <div class="card">
+                <h3>Moi, moche et méchant 2</h3>
+                <iframe src="https://filemoon.sx/e/wyfcrxmnvmh0" width="100%" height="200" scrolling="NO" allowfullscreen></iframe>
+            </div>
+            <div class="card">
+                <h3>Moi, moche et méchant 3</h3>
+                <iframe src="https://filemoon.sx/e/fp9mvpdgazzt" width="100%" height="200" scrolling="NO" allowfullscreen></iframe>
+            </div>
+            <div class="card">
+                <h3>Moi, moche et méchant 4</h3>
+                <iframe src="https://mayicloud.com/iframe/c7CIDJIxns" width="100%" height="200" scrolling="NO" allowfullscreen></iframe>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
