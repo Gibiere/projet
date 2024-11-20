@@ -108,6 +108,22 @@
         </section>
     </main>
 
-    <script src="search.js"></script>
+        <script>
+        // Filtrage dynamique des films
+        document.getElementById('search').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const movies = document.querySelectorAll('.card');
+
+            movies.forEach(function(movie) {
+                const title = movie.getAttribute('data-title').toLowerCase();
+
+                if (title.includes(searchTerm)) {
+                    movie.style.display = 'block'; // Afficher le film si la recherche correspond
+                } else {
+                    movie.style.display = 'none'; // Masquer le film si la recherche ne correspond pas
+                }
+            });
+        });
+    </script>
 </body>
 </html>
